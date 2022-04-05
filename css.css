@@ -10,7 +10,6 @@ ul {
     padding: 0;
     overflow: hidden;
     background-color: #333;
-    position: fixed;
     top: 0;
     width: 100%;
   }
@@ -33,4 +32,11 @@ ul {
 
   .active {
     background-color: #04AA6D;
+  }
+
+  /*text*/
+
+  #main-text {
+    margin: 0;
+    padding: 10px;
   }
