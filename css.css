@@ -67,7 +67,8 @@ ul {
 
   /*text*/
 
-  #main-text {
-    margin: 0;
+  .main-text {
+    margin: auto;
+    width: 50%;
     padding: 10px;
   }
