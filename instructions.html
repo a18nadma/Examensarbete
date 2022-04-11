@@ -21,11 +21,17 @@
         <!--JS here-->
         <script>
             const currentTheme = localStorage.getItem("theme");
+            var font = parseInt(localStorage.getItem("font"));
+            
             if (currentTheme == "dark"){
                 document.body.classList.toggle("dark-theme");
             } else if (currentTheme == "light"){
                 document.body.classList.toggle("light-theme");
             }
+
+            //font size
+            document.getElementById("main-text").style.fontSize = font + "px";
+            console.log(font);
         </script>
     </body>
 </html>

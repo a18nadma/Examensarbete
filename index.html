@@ -18,7 +18,7 @@
             <li><a href="instructions.html">Instructions</a></li>
             <li><a href="settings.html">Settings</a></li>
         </ul>
-        <div class="main-text">
+        <div id="main-text">
             <h1>Examensarbete Undersökning</h1>
             <p>Undersökning går ut på att testa hur estetiska val kan påverka läsbarheten och navigering av en hemsida. Instruktioner finns på sidan genom att klicka på "instructions". Du kan välja att avbryta när du vill. Informationen som samlas kommer inte att användas utanför arbetet, alla deltagare är också anonyma. </p>
             <br>
@@ -28,11 +28,18 @@
         <!--JS here-->
         <script>
             const currentTheme = localStorage.getItem("theme");
+            var font = parseInt(localStorage.getItem("font"));
+
             if (currentTheme == "dark"){
                 document.body.classList.toggle("dark-theme");
             } else if (currentTheme == "light"){
                 document.body.classList.toggle("light-theme");
             }
+
+            //font size
+            document.getElementById("main-text").style.fontSize = font + "px";
+            console.log(font);
+            
         </script>
     </body>
 </html>
