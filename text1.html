@@ -18,7 +18,7 @@
             <li><a href="instructions.html">Instructions</a></li>
             <li><a href="settings.html">Settings</a></li>
         </ul>
-        <div class="main-text">
+        <div id="main-text">
             <h1>Derelict Philadelphia</h1>
             <p>Hannah Lakeman was thinking about Naomi Thornhill again. Naomi was a rude academic with curvaceous toes and sticky spots. Hannah walked over to the window and reflected on her wild surroundings. She had always loved derelict Philadelphia with its quirky, quaint quarries. It was a place that encouraged her tendency to feel fuzzy.</p>
             <p>hen she saw something in the distance, or rather someone. It was the a rude figure of Naomi Thornhill. Hannah gulped. She glanced at her own reflection. She was a patient, smart, port drinker with spiky toes and greasy spots. Her friends saw her as a dry, deafening dolphin. Once, she had even helped a tasteless baby flamingo cross the road. But not even a patient person who had once helped a tasteless baby flamingo cross the road, was prepared for what Naomi had in store today.</p>
@@ -30,11 +30,17 @@
             <!--JS here-->
             <script>
             const currentTheme = localStorage.getItem("theme");
+            var font = parseInt(localStorage.getItem("font"));
+            
             if (currentTheme == "dark"){
                  document.body.classList.toggle("dark-theme");
                 } else if (currentTheme == "light"){
                     document.body.classList.toggle("light-theme");
                 }
+
+            //font size
+            document.getElementById("main-text").style.fontSize = font + "px";
+            console.log(font);
             </script>
     </body>
 </html>

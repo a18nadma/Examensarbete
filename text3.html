@@ -18,7 +18,7 @@
             <li><a href="instructions.html">Instructions</a></li>
             <li><a href="settings.html">Settings</a></li>
         </ul>
-        <div class="main-text">
+        <div id="main-text">
             <h1>The Minuscule Hat</h1>
             <p>Alison Khan looked at the minuscule hat in her hands and felt barmy. She walked over to the window and reflected on her old-fashioned surroundings. She had always loved dull West Boggins with its knobby, kindhearted kettles. It was a place that encouraged her tendency to feel barmy. Then she saw something in the distance, or rather someone. It was the figure of Steve Wishmonger. Steve was a selfish knight with slimy legs and wobbly eyes.</p>
             <p>Alison gulped. She glanced at her own reflection. She was an energetic, sinister, wine drinker with scrawny legs and dirty eyes. Her friends saw her as an amused, adorable academic. Once, she had even rescued a manky baby flamingo from a burning building. But not even an energetic person who had once rescued a manky baby flamingo from a burning building, was prepared for what Steve had in store today. The rain hammered like partying horses, making Alison calm. As Alison stepped outside and Steve came closer, she could see the flat smile on his face.</p>
@@ -28,11 +28,17 @@
         <!--JS here-->
         <script>
             const currentTheme = localStorage.getItem("theme");
+            var font = parseInt(localStorage.getItem("font"));
+            
             if (currentTheme == "dark"){
                 document.body.classList.toggle("dark-theme");
                 } else if (currentTheme == "light"){
                 document.body.classList.toggle("light-theme");
             }
+
+            //font size
+            document.getElementById("main-text").style.fontSize = font + "px";
+            console.log(font);
         </script>
     </body>
 </html>

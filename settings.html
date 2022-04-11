@@ -21,6 +21,8 @@
         <div id="settings-box">
             <button class="dark-button">dark mode</button>
             <button class="light-button">light mode</button>
+            <span>
+               <label>Fontsize </label> <input type="range" min="18" max="64" id="font-size" onchange="changeSize()" value="20" /></span>
         </div>
 
 
@@ -29,6 +31,7 @@
             
             const darkButton = document.querySelector(".dark-button");
             const lightButton = document.querySelector(".light-button");
+            
 
             const currentTheme = localStorage.getItem("theme");
             if (currentTheme == "dark"){
@@ -54,6 +57,14 @@
                 console.log("dark");
             });
 
+            //font size
+            function changeSize(){
+                var slider = document.getElementById("font-size").value;
+                localStorage.setItem("font", slider);
+                console.log(slider);
+            }
+            
+            
         </script>
     </body>
 </html>
