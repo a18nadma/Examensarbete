@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8"/>
         <link rel="stylesheet" href="css.css">
-        <script>
-            //do JS here
-        </script>
     </head>
     <body>
         <ul>
@@ -27,5 +25,14 @@
             <p>"Look Alison," growled Steve, with an admirable glare that reminded Alison of selfish goldfish. "It's not that I don't love you, but I want a kiss. You owe me 5975 gold pieces." Alison looked back, even more calm and still fingering the minuscule hat. "Steve, I shrunk the kids," she replied. They looked at each other with worried feelings, like two burnt, bulbous badgers skipping at a very splendid wedding, which had indie music playing in the background and two helpful uncles shouting to the beat.</p>
             <p>Suddenly, Steve lunged forward and tried to punch Alison in the face. Quickly, Alison grabbed the minuscule hat and brought it down on Steve's skull. Steve's slimy legs trembled and his wobbly eyes wobbled. He looked surprised, his wallet raw like a repulsive, ripe rock. Then he let out an agonising groan and collapsed onto the ground. Moments later Steve Wishmonger was dead. Alison Khan went back inside and made herself a nice glass of wine.</p>
         </div>
+        <!--JS here-->
+        <script>
+            const currentTheme = localStorage.getItem("theme");
+            if (currentTheme == "dark"){
+                document.body.classList.toggle("dark-theme");
+                } else if (currentTheme == "light"){
+                document.body.classList.toggle("light-theme");
+            }
+        </script>
     </body>
 </html>
