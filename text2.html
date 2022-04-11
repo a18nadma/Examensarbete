@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8"/>
         <link rel="stylesheet" href="css.css">
         <script>
             //do JS here
@@ -28,5 +29,14 @@
             <p>They looked at each other with sleepy feelings, like two grim, grisly giraffes chatting at a very energetic engagement party, which had orchestral music playing in the background and two sympathetic uncles boating to the beat. Fairydust studied Cameron's slimy moles and fluffy eyebrows. Eventually, she took a deep breath. "I'm afraid I declared myself bankrupt," explained Fairydust. "You will never get your money."</p>
             <p>"No!" objected Cameron. "You lie!". "I do not!" retorted Fairydust. "Now get your slimy moles out of here before I hit you with this warped blade." Cameron looked afraid, his wallet raw like a barbecued, burnt book. Fairydust could actually hear Cameron's wallet shatter into 4944 pieces. Then the daring author hurried away into the distance. Not even a glass of brandy would calm Fairydust's nerves tonight.</p>
         </div>
+            <!--JS here-->
+        <script>
+        const currentTheme = localStorage.getItem("theme");
+        if (currentTheme == "dark"){
+            document.body.classList.toggle("dark-theme");
+            } else if (currentTheme == "light"){
+                document.body.classList.toggle("light-theme");
+            }
+        </script>
     </body>
 </html>

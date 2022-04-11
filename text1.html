@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8"/>
         <link rel="stylesheet" href="css.css">
-        <script>
-            //do JS here
-        </script>
     </head>
     <body>
         <ul>
@@ -28,5 +26,15 @@
             <p>"I am here because I want some more Twitter followers," Naomi bellowed, in a smelly tone. She slammed her fist against Hannah's chest, with the force of 6457 flamingos. "I frigging love you, Hannah Lakeman." Hannah looked back, even more sad and still fingering the minuscule hawk. "Naomi, I am your father," she replied. They looked at each other with relaxed feelings, like two glamorous, gigantic gerbils sitting at a very funny disco, which had R & B music playing in the background and two predatory uncles hopping to the beat.</p>
             <p>Suddenly, Naomi lunged forward and tried to punch Hannah in the face. Quickly, Hannah grabbed the minuscule hawk and brought it down on Naomi's skull. Naomi's curvaceous toes trembled and her sticky spots wobbled. She looked happy, her body raw like a knobby, kindhearted kettle. Then she let out an agonising groan and collapsed onto the ground. Moments later Naomi Thornhill was dead. Hannah Lakeman went back inside and made herself a nice glass of port.</p>
         </div>
+
+            <!--JS here-->
+            <script>
+            const currentTheme = localStorage.getItem("theme");
+            if (currentTheme == "dark"){
+                 document.body.classList.toggle("dark-theme");
+                } else if (currentTheme == "light"){
+                    document.body.classList.toggle("light-theme");
+                }
+            </script>
     </body>
 </html>

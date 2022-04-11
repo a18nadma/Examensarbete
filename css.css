@@ -9,7 +9,6 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
     top: 0;
     width: 100%;
   }
@@ -20,18 +19,13 @@ ul {
   
   li a, .dropbtn {
     display: block;
-    color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
   }
   
-  li a:hover, .dropdown:hover .dropbtn {
-    background-color: #111;
-  }
-
   .active {
-    background-color: #04AA6D;
+    background-color: #a889db;
   }
 
   /*dropdown*/
@@ -43,9 +37,7 @@ ul {
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
   }
 
@@ -57,9 +49,6 @@ ul {
     text-align: left;
   }
 
-  .dropdown-content a:hover {
-    background-color: #f1f1f1;
-  }
 
   .dropdown:hover .dropdown-content {
     display: block;
@@ -71,4 +60,82 @@ ul {
     margin: auto;
     width: 50%;
     padding: 10px;
+  }
+
+
+  /*lightmode*/
+
+  @media (prefers-color-scheme: light){
+    body {
+      background-color: white;
+    }
+
+    ul {
+      background-color: rgb(223, 222, 222);
+    }
+
+    li a:hover, .dropdown:hover .dropbtn {
+      background-color: rgb(192, 192, 192);
+    }
+
+    li a, .dropbtn {
+      color: black;
+    }
+
+    .dropdown-content {
+      background-color: #f9f9f9;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown-content a {
+      color: black;
+    }
+
+    body.dark-theme {
+      background-color: rgb(53, 52, 58);
+      color: white;
+    
+  }
+
+  }
+
+
+  /*Dark mode */
+  @media (prefers-color-scheme: dark){
+    body {
+      background-color: rgb(53, 52, 58);
+      color: white;
+    }
+
+    ul {
+      background-color: #333;
+    }
+
+    li a:hover, .dropdown:hover .dropbtn {
+      background-color: #2b2b2b;
+    }
+
+    li a, .dropbtn {
+      color: White
+    }
+
+    .dropdown-content {
+      background-color: rgb(48, 48, 48);
+    }
+
+    .dropdown-content a:hover {
+      background-color: #2b2b2b;
+    }
+    .dropdown-content a {
+      color: white;
+    }
+
+    body.light-theme {
+        background-color: white;
+        color: black;
+      
+    }
   }
