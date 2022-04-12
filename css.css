@@ -24,7 +24,7 @@ ul {
     text-decoration: none;
   }
   
-  .active {
+  #active {
     background-color: #a889db;
   }
 
@@ -59,7 +59,9 @@ ul {
   #main-text {
     margin: auto;
     width: 50%;
-    padding: 10px;
+    border-radius: 25px;
+    border: 5px solid #a889db;
+    padding: 20px;
   }
 
 
