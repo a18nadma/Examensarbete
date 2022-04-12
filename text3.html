@@ -8,11 +8,11 @@
         <ul>
             <li><a href="index.html">Home</a></li>
             <li class="dropdown">
-                <a href="#" class="active dropbtn">Text</a>
+                <a href="#" id="active" class="dropbtn">Text</a>
                 <div class="dropdown-content">
                     <a href="text1.html">Text 1</a>
                     <a href="text2.html">Text 2</a>
-                    <a href="text3.html" class="active">Text 3</a>
+                    <a href="text3.html" id="active">Text 3</a>
                 </div>
             </li>
             <li><a href="instructions.html">Instructions</a></li>
@@ -29,6 +29,7 @@
         <script>
             const currentTheme = localStorage.getItem("theme");
             var font = parseInt(localStorage.getItem("font"));
+            var color = localStorage.getItem("color");
             
             if (currentTheme == "dark"){
                 document.body.classList.toggle("dark-theme");
@@ -39,6 +40,12 @@
             //font size
             document.getElementById("main-text").style.fontSize = font + "px";
             console.log(font);
+
+            //color 
+            document.getElementById("main-text").style.borderColor = color;
+            document.getElementById("active").style.backgroundColor = color;
+            console.log(color);
+
         </script>
     </body>
 </html>
