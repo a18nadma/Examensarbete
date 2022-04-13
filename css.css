@@ -140,4 +140,17 @@ ul {
         color: black;
       
     }
+
+
+    /*settings*/
+    #settings-box{
+      margin: auto;
+      width: 50%;
+      border-radius: 25px;
+      border: 5px solid #a889db;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      height:50%;
+    }
   }
