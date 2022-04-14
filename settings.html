@@ -38,9 +38,10 @@
             
             const darkButton = document.querySelector(".dark-button");
             const lightButton = document.querySelector(".light-button");
-
-            var color = document.getElementById("color-picker").value;
             var navActive = document.getElementById("active");
+            var color = document.getElementById("color-picker").value;
+
+
             
 
             const currentTheme = localStorage.getItem("theme");
@@ -79,6 +80,7 @@
 
             //secondary color
             function changeColor(){
+                var color = document.getElementById("color-picker").value;
 
                 localStorage.setItem("color", color);
 
@@ -87,14 +89,11 @@
                 navActive.style.backgroundColor = color;
                 document.getElementById("settings-box").style.borderColor = color;
 
-                navActive.style.backgroundColor = getColor;
-                document.getElementById("settings-box").style.borderColor = getColor;
-
             }
 
+
+
             var getColor = localStorage.getItem("color");
-                navActive.style.backgroundColor = color;
-                document.getElementById("settings-box").style.borderColor = color;
 
                 navActive.style.backgroundColor = getColor;
                 document.getElementById("settings-box").style.borderColor = getColor;
