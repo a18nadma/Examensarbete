@@ -6,8 +6,8 @@
     </head>
     <body>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li class="dropdown">
+            <li class="navbar"><a href="index.html">Home</a></li>
+            <li class="dropdown navbar">
                 <a href="#" class="dropbtn">Text</a>
                 <div class="dropdown-content">
                     <a href="text1.html">Text 1</a>
@@ -15,14 +15,14 @@
                     <a href="text3.html">Text 3</a>
                 </div>
             </li>
-            <li><a href="instructions.html">Instructions</a></li>
-            <li><a href="settings.html" id="active">Settings</a></li>
+            <li class="navbar"><a href="instructions.html">Instructions</a></li>
+            <li class="navbar"><a href="settings.html" id="active">Settings</a></li>
         </ul>
         <div id="settings-box">
             <div id="content">
             <span id="buttonBox">
-                    <button class="dark-button">dark mode</button>
-                    <button class="light-button">light mode</button>
+                    <button class="dark-button">Dark mode</button>
+                    <button class="light-button">Light mode</button>
                 </span>
                 <br>
                 <span id="font">
@@ -38,10 +38,10 @@
             
             const darkButton = document.querySelector(".dark-button");
             const lightButton = document.querySelector(".light-button");
-
-            var color = document.getElementById("color-picker").value;
             var navActive = document.getElementById("active");
-            
+            var getColor = localStorage.getItem("color");
+            var darkButtonPressed; 
+            var color = document.getElementById("color-picker").value;
 
             const currentTheme = localStorage.getItem("theme");
             if (currentTheme == "dark"){
@@ -54,8 +54,14 @@
             lightButton.addEventListener("click", function() {
                 document.body.classList.add("light-theme");
                 document.body.classList.remove("dark-theme");
+                darkButtonPressed = false;
+                if(getColor == null){
+                    lightButton.style.backgroundColor = color;
+                }else{
+                lightButton.style.backgroundColor = getColor;
+                }
+                darkButton.style.backgroundColor = "#f1f1f1";
                 localStorage.setItem("theme", "light");
-                console.log("light");
             });
 
             //Dark
@@ -63,15 +69,20 @@
             darkButton.addEventListener("click", function() {
                 document.body.classList.add("dark-theme");
                 document.body.classList.remove("light-theme");
+                darkButtonPressed = true;
+                if(getColor == null){
+                    darkButton.style.backgroundColor = color;
+                }else{
+                    darkButton.style.backgroundColor = getColor;
+                }
+                lightButton.style.backgroundColor = "#f1f1f1";
                 localStorage.setItem("theme", "dark");
-                console.log("dark");
             });
 
             //font size
             function changeSize(){
                 var slider = document.getElementById("font-size").value;
                 localStorage.setItem("font", slider);
-                console.log(slider);
 
                 var valueBox = document.getElementById("font-value");
                 valueBox.innerHTML = slider + "px";
@@ -79,25 +90,59 @@
 
             //secondary color
             function changeColor(){
+                var color = document.getElementById("color-picker").value;
 
                 localStorage.setItem("color", color);
-
-                console.log(color);
-
                 navActive.style.backgroundColor = color;
                 document.getElementById("settings-box").style.borderColor = color;
 
-                navActive.style.backgroundColor = getColor;
-                document.getElementById("settings-box").style.borderColor = getColor;
 
+                //Makes sure that the active theme is the highlighted one
+                if (darkButtonPressed == true){
+                    darkButton.style.backgroundColor = color;
+                }else if(darkButtonPressed == false){
+                    lightButton.style.backgroundColor = color;
+                }else if(currentTheme == "dark"){
+                    darkButton.style.backgroundColor = color;
+                } else if (currentTheme == "light"){
+                    lightButton.style.backgroundColor = color;
+                } else if (window.matchMedia("(prefers-color-scheme: dark)")){
+                    darkButton.style.backgroundColor = color;
+                } else {
+                    lightButton.style.backgroundColor = color;
+                }
+
+                //Makes the color stay the after color bnutton has been pressed
+                //Light
+            lightButton.addEventListener("click", function() {
+                document.body.classList.add("light-theme");
+                document.body.classList.remove("dark-theme");
+                lightButton.style.backgroundColor = color;
+                localStorage.setItem("theme", "light");
+            });
+
+            //Dark
+
+            darkButton.addEventListener("click", function() {
+                document.body.classList.add("dark-theme");
+                document.body.classList.remove("light-theme");
+                darkButton.style.backgroundColor = color;
+                localStorage.setItem("theme", "dark");
+            });
             }
+            navActive.style.backgroundColor = getColor;
+            document.getElementById("settings-box").style.borderColor = getColor;
 
-            var getColor = localStorage.getItem("color");
-                navActive.style.backgroundColor = color;
-                document.getElementById("settings-box").style.borderColor = color;
-
-                navActive.style.backgroundColor = getColor;
-                document.getElementById("settings-box").style.borderColor = getColor;
+            //checks if there's a preference for theme or uses default OS theme and sets the used mode color to it.
+            if(currentTheme == "dark"){
+                darkButton.style.backgroundColor = getColor;
+            } else if (currentTheme == "light"){
+                lightButton.style.backgroundColor = getColor;
+            } else if (window.matchMedia("(prefers-color-scheme: dark)")){
+                darkButton.style.backgroundColor = color;
+            } else {
+                lightButton.style.backgroundColor = color;
+            }
 
             
         </script>

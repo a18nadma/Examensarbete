@@ -6,8 +6,8 @@
     </head>
     <body>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li class="dropdown">
+            <li class="navbar"><a href="index.html">Home</a></li>
+            <li class="dropdown navbar">
                 <a href="#" class="dropbtn">Text</a>
                 <div class="dropdown-content">
                     <a href="text1.html">Text 1</a>
@@ -15,11 +15,29 @@
                     <a href="text3.html">Text 3</a>
                 </div>
             </li>
-            <li><a href="instructions.html" id="active">Instructions</a></li>
-            <li><a href="settings.html">Settings</a></li>
+            <li class="navbar"><a href="instructions.html" id="active">Instructions</a></li>
+            <li class="navbar"><a href="settings.html">Settings</a></li>
         </ul>
-        <div id="main-text"></div>
-        <!--JS here-->
+        <div id="main-text">
+            <h2>Svenska</h2>
+            <ol id="instructions-se">
+                <li class="list-instructions">Läs en paragraf från Text 1 utan att göra några ändringar i "Settings"</li>
+                <li class="list-instructions">Gå till "Settings" och välj antingen Dark mode eller Light mode beroende på vilken tema du började med (välj motsatsa tema)</li>
+                <li class="list-instructions">Läs en paragraf från Text 2</li>
+                <li class="list-instructions">Gå till "settings" och välj sekundär färg, font storlek och tema beroende på dina preferenser</li>
+                <li class="list-instructions">Läs en Paragraf från Text 3</li>
+                <li class="list-instructions">Besvara enkäten: <a id="instruction-link-se" class="instruction-link" href="https://forms.gle/fjD81KUMFxKKrsgX7">https://forms.gle/fjD81KUMFxKKrsgX7</a></li>
+            </ol>
+            <h2>English</h2>
+            <ol id="instructions-en">
+                <li class="list-instructions">Read one Paragraph from Text 1 without making any changes to "settings"</li>
+                <li class="list-instructions">Go to "Settings" and choose wither Light mode or Dark mode depending on which theme you started with (choose the opposite theme)</li>
+                <li class="list-instructions">Read one paragraph from Text 2</li>
+                <li class="list-instructions">Go to "settings" and choose secondary color, font size and theme depending on your preferences</li>
+                <li class="list-instructions">Read one Paragraf from Text 3</li>
+                <li class="list-instructions">Answer the survey: <a id="instruction-link-en" class="instruction-link" href="https://forms.gle/fjD81KUMFxKKrsgX7">https://forms.gle/fjD81KUMFxKKrsgX7</a></li>
+            </ol>
+        </div>
         <script>
             const currentTheme = localStorage.getItem("theme");
             var font = parseInt(localStorage.getItem("font"));
@@ -33,12 +51,12 @@
 
             //font size
             document.getElementById("main-text").style.fontSize = font + "px";
-            console.log(font);
-
+            
             //color 
             document.getElementById("main-text").style.borderColor = color;
             document.getElementById("active").style.backgroundColor = color;
-            console.log(color);
+            document.getElementById("instruction-link-en").style.color = color;
+            document.getElementById("instruction-link-se").style.color = color;
         </script>
     </body>
 </html>
