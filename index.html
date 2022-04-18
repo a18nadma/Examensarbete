@@ -6,8 +6,8 @@
     <body>
         <ul>
             <meta charset="utf-8"/>
-            <li><a href="index.html" id="active">Home</a></li>
-            <li class="dropdown">
+            <li class="navbar"><a href="index.html" id="active">Home</a></li>
+            <li class="dropdown navbar">
                 <a href="#" class="dropbtn">Text</a>
                 <div class="dropdown-content">
                     <a href="text1.html">Text 1</a>
@@ -15,8 +15,8 @@
                     <a href="text3.html">Text 3</a>
                 </div>
             </li>
-            <li><a href="instructions.html">Instructions</a></li>
-            <li><a href="settings.html">Settings</a></li>
+            <li class="navbar"><a href="instructions.html">Instructions</a></li>
+            <li class="navbar"><a href="settings.html">Settings</a></li>
         </ul>
         <div id="main-text">
             <h1>Examensarbete Undersökning</h1>
@@ -39,13 +39,11 @@
 
             //font size
             document.getElementById("main-text").style.fontSize = font + "px";
-            console.log(font);
             
 
             //color 
             document.getElementById("main-text").style.borderColor = color;
             document.getElementById("active").style.backgroundColor = color;
-            console.log(color);
 
         </script>
     </body>
