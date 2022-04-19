@@ -152,7 +152,7 @@ ul {
         color: black;
       
     }
-
+  }
 
     /*settings*/
     #settings-box{
@@ -165,8 +165,7 @@ ul {
       justify-content: center;
       height:50%;
     }
-  }
-
+    
 .instuction-link{
   color: #a889db;
 }
