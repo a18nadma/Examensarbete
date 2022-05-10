@@ -26,7 +26,23 @@
                 </span>
                 <br>
                 <span id="font">
-                <label>Fontsize </label> <input type="range" min="18" max="64" id="font-size" onchange="changeSize()" value="20" /><label id="font-value"></label></span>
+                    <label>Fontsize </label> 
+                    <select id="font-size" onchange="changeSize()" value="12" >
+                        <option value="8">8</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="14">14</option>
+                        <option value="16">16</option>
+                        <option value="18">18</option>
+                        <option value="20">20</option>
+                        <option value="24">24</option>
+                        <option value="30">30</option>
+                        <option value="36">36</option>
+                        <option value="48">48</option>
+                        <option value="64">64</option>
+                    </select>
+               </span>
                 <br>
                <span id="colorpick"><label>Secondary color</label><input type="color" id="color-picker" value="#a889db" onchange="changeColor()"></span>
             </div>
@@ -83,9 +99,6 @@
             function changeSize(){
                 var slider = document.getElementById("font-size").value;
                 localStorage.setItem("font", slider);
-
-                var valueBox = document.getElementById("font-value");
-                valueBox.innerHTML = slider + "px";
             }
 
             //secondary color
