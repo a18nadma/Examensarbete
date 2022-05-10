@@ -166,6 +166,11 @@ ul {
       height:50%;
     }
     
-.instuction-link{
+#instruction-link-en{
   color: #a889db;
 }
+
+#instruction-link-se{
+  color: #a889db;
+}
+

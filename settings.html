@@ -26,8 +26,9 @@
                 </span>
                 <br>
                 <span id="font">
-                    <label>Fontsize </label> 
-                    <select id="font-size" onchange="changeSize()" value="12" >
+
+                    <label>Fontsize </label>
+                    <select id="font-size" onchange="changeSize()">
                         <option value="8">8</option>
                         <option value="10">10</option>
                         <option value="11">11</option>
@@ -125,7 +126,7 @@
                     lightButton.style.backgroundColor = color;
                 }
 
-                //Makes the color stay the after color bnutton has been pressed
+                //Makes the color stay the after color button has been pressed
                 //Light
             lightButton.addEventListener("click", function() {
                 document.body.classList.add("light-theme");
@@ -148,13 +149,29 @@
 
             //checks if there's a preference for theme or uses default OS theme and sets the used mode color to it.
             if(currentTheme == "dark"){
-                darkButton.style.backgroundColor = getColor;
+                if (localStorage.getItem("color") == null){
+                    darkButton.style.backgroundColor = color;
+                }else{
+                    darkButton.style.backgroundColor = getColor;
+                }
             } else if (currentTheme == "light"){
-                lightButton.style.backgroundColor = getColor;
+                if (localStorage.getItem("color") == null){
+                    lightButton.style.backgroundColor = color;
+                }else{
+                    lightButton.style.backgroundColor = getColor;
+                }
             } else if (window.matchMedia("(prefers-color-scheme: dark)")){
-                darkButton.style.backgroundColor = color;
+                if (localStorage.getItem("color") == null){
+                    darkButton.style.backgroundColor = color;
+                }else{
+                    darkButton.style.backgroundColor = getColor;
+                }
             } else {
-                lightButton.style.backgroundColor = color;
+                if (localStorage.getItem("color") == null){
+                    lightButton.style.backgroundColor = color;
+                }else{
+                    lightButton.style.backgroundColor = getColor;
+                }
             }
 
             
