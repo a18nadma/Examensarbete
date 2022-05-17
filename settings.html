@@ -25,26 +25,6 @@
                     <button class="light-button">Light mode</button>
                 </span>
                 <br>
-                <span id="font">
-                    <label>Fontsize </label> 
-                    <select id="font-size" onchange="changeSize()" value="12" >
-                        <option value="8">8</option>
-                        <option value="10">10</option>
-                        <option value="11">11</option>
-                        <option value="12">12</option>
-                        <option value="14">14</option>
-                        <option value="16">16</option>
-                        <option value="18">18</option>
-                        <option value="20">20</option>
-                        <option value="24">24</option>
-                        <option value="30">30</option>
-                        <option value="36">36</option>
-                        <option value="48">48</option>
-                        <option value="64">64</option>
-                    </select>
-               </span>
-                <br>
-               <span id="colorpick"><label>Secondary color</label><input type="color" id="color-picker" value="#a889db" onchange="changeColor()"></span>
             </div>
         </div>
 
@@ -95,45 +75,6 @@
                 localStorage.setItem("theme", "dark");
             });
 
-            //font size
-            function changeSize(){
-                var slider = document.getElementById("font-size").value;
-                localStorage.setItem("font", slider);
-            }
-
-            //secondary color
-            function changeColor(){
-                var color = document.getElementById("color-picker").value;
-
-                localStorage.setItem("color", color);
-                navActive.style.backgroundColor = color;
-                document.getElementById("settings-box").style.borderColor = color;
-
-
-                //Makes sure that the active theme is the highlighted one
-                if (darkButtonPressed == true){
-                    darkButton.style.backgroundColor = color;
-                }else if(darkButtonPressed == false){
-                    lightButton.style.backgroundColor = color;
-                }else if(currentTheme == "dark"){
-                    darkButton.style.backgroundColor = color;
-                } else if (currentTheme == "light"){
-                    lightButton.style.backgroundColor = color;
-                } else if (window.matchMedia("(prefers-color-scheme: dark)")){
-                    darkButton.style.backgroundColor = color;
-                } else {
-                    lightButton.style.backgroundColor = color;
-                }
-
-                //Makes the color stay the after color bnutton has been pressed
-                //Light
-            lightButton.addEventListener("click", function() {
-                document.body.classList.add("light-theme");
-                document.body.classList.remove("dark-theme");
-                lightButton.style.backgroundColor = color;
-                localStorage.setItem("theme", "light");
-            });
-
             //Dark
 
             darkButton.addEventListener("click", function() {
@@ -142,7 +83,7 @@
                 darkButton.style.backgroundColor = color;
                 localStorage.setItem("theme", "dark");
             });
-            }
+            
             navActive.style.backgroundColor = getColor;
             document.getElementById("settings-box").style.borderColor = getColor;
 
