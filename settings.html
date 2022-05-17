@@ -35,9 +35,7 @@
             const darkButton = document.querySelector(".dark-button");
             const lightButton = document.querySelector(".light-button");
             var navActive = document.getElementById("active");
-            var getColor = localStorage.getItem("color");
             var darkButtonPressed; 
-            var color = document.getElementById("color-picker").value;
 
             const currentTheme = localStorage.getItem("theme");
             if (currentTheme == "dark"){
@@ -51,11 +49,6 @@
                 document.body.classList.add("light-theme");
                 document.body.classList.remove("dark-theme");
                 darkButtonPressed = false;
-                if(getColor == null){
-                    lightButton.style.backgroundColor = color;
-                }else{
-                lightButton.style.backgroundColor = getColor;
-                }
                 darkButton.style.backgroundColor = "#f1f1f1";
                 localStorage.setItem("theme", "light");
             });
@@ -66,11 +59,6 @@
                 document.body.classList.add("dark-theme");
                 document.body.classList.remove("light-theme");
                 darkButtonPressed = true;
-                if(getColor == null){
-                    darkButton.style.backgroundColor = color;
-                }else{
-                    darkButton.style.backgroundColor = getColor;
-                }
                 lightButton.style.backgroundColor = "#f1f1f1";
                 localStorage.setItem("theme", "dark");
             });
@@ -80,24 +68,9 @@
             darkButton.addEventListener("click", function() {
                 document.body.classList.add("dark-theme");
                 document.body.classList.remove("light-theme");
-                darkButton.style.backgroundColor = color;
                 localStorage.setItem("theme", "dark");
             });
             
-            navActive.style.backgroundColor = getColor;
-            document.getElementById("settings-box").style.borderColor = getColor;
-
-            //checks if there's a preference for theme or uses default OS theme and sets the used mode color to it.
-            if(currentTheme == "dark"){
-                darkButton.style.backgroundColor = getColor;
-            } else if (currentTheme == "light"){
-                lightButton.style.backgroundColor = getColor;
-            } else if (window.matchMedia("(prefers-color-scheme: dark)")){
-                darkButton.style.backgroundColor = color;
-            } else {
-                lightButton.style.backgroundColor = color;
-            }
-
             
         </script>
     </body>
