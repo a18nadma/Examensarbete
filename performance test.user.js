@@ -14,7 +14,7 @@
     var startingTime
     var RunsDone;
     var measurements = new Array();
-    var totalRuns = 100;
+    var totalRuns = 101;
 
     // If measurement data exists in localSorage we save it to a java array
     if (localStorage.getItem('Measurements') !== null){
